@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - 27018:27017
+  api:
+    image: local
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+    ports:
+      - 8080:8080

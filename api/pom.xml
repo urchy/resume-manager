@@ -11,8 +11,7 @@
 	</parent>
 
 	<artifactId>api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>api</name>
+	<name>resume manager api</name>
 	<packaging>jar</packaging>
 
 	<description>Api system of Resume</description>
