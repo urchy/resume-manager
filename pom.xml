@@ -19,6 +19,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <surefire.version>2.19.1</surefire.version>
     </properties>
 
     <modules>
