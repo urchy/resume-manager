@@ -14,5 +14,5 @@ public interface ResumeMapper {
 
     ResumeMapper INSTANCE = Mappers.getMapper(ResumeMapper.class);
 
-    ResumeDTO PersonDTOtoPerson(Resume resume);
+    ResumeDTO ResumetoResumeDTO(Resume resume);
 }

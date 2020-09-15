@@ -21,7 +21,7 @@ import java.util.Set;
 @Document
 public class Person {
     @Id
-    private Long id;
+    private String id;
     @NonNull
     private String firstName;
     @NonNull

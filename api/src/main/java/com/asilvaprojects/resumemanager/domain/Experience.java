@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Experience {
     @Id
-    private Long id;
+    private String id;
     private String role;
     private String description;
     private LocalDate startDate;

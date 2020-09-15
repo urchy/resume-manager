@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Education {
     @Id
-    private Long id;
+    private String id;
     private String degree;
     private String institution;
     private LocalDate startDate;

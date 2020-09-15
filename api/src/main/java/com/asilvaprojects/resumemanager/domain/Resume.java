@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Resume {
 
     @Id
-    private Long Id;
+    private String Id;
     @NonNull
     private LocalDate creationDate;
     @NonNull

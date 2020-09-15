@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Data
 public class ResumeDTO {
-    private Long Id;
+    private String Id;
     private LocalDate creationDate;
     private String presentation;
     private Person person;

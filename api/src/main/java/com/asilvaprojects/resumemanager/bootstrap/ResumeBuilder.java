@@ -21,30 +21,30 @@ public class ResumeBuilder {
     public ResumeBuilder() {
     }
 
-    public ResumeBuilder buildSkill(Long id, String name, Integer level) {
+    public ResumeBuilder buildSkill(String id, String name, Integer level) {
         Skill skill = new Skill(id, name, level);
         this.skills.add(skill);
         return this;
     }
 
-    public ResumeBuilder buildExperince(Long id, String role, String description, LocalDate startDate, LocalDate endDate) {
+    public ResumeBuilder buildExperince(String id, String role, String description, LocalDate startDate, LocalDate endDate) {
         Experience experience = new Experience(id, role, description, startDate, endDate);
         this.experiences.add(experience);
         return this;
     }
 
-    public ResumeBuilder buildEducation(Long id, String degree, String instituion, LocalDate startDate, LocalDate endDate, String grade){
+    public ResumeBuilder buildEducation(String id, String degree, String instituion, LocalDate startDate, LocalDate endDate, String grade){
         Education education = new Education(id,degree,instituion,startDate,endDate, grade);
         this.educations.add(education);
         return this;
     }
 
-    public ResumeBuilder buildAddress(Long id, String street, String postalCode, String country) {
+    public ResumeBuilder buildAddress(String id, String street, String postalCode, String country) {
         this.address = new Address(id,street,postalCode,country);
         return this;
     }
 
-    public ResumeBuilder buildPerson(Long id, String firstName, String lastName, LocalDate birthday){
+    public ResumeBuilder buildPerson(String id, String firstName, String lastName, LocalDate birthday){
         this.person = new Person(id, firstName, lastName, birthday,this.address,this.educations,this.experiences,this.skills);
         return this;
     }
