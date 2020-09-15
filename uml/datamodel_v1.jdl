@@ -1,0 +1,76 @@
+entity Resume {
+	id Long,
+    date Date,
+    presentation String,
+	person Person,
+	
+}
+
+entity Experience {
+	id Long,
+    role String,
+    description String,
+    startDate Date,
+    endDate Date
+}
+
+entity Education {
+	id Long,
+    degree String,
+    institution String,
+    startDate Date,
+    endDate Date,
+    grade String
+}
+
+entity Person {
+	firstname String,
+	surname String,
+    birthday Date,
+    address Address,
+    education Education,
+    experience Experience,
+    skill Skill
+}
+
+entity Language {
+	id Long,
+    name String,
+    level Integer
+}
+
+entity Address {
+	street String,
+    postalCode String,
+    country String
+}
+
+entity Skill {
+	id Long,
+    name String,
+    level Integer
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+relationship OneToOne {
+	Resume to Person,
+    Person to Address
+}
+
+relationship OneToMany {
+    Person to Education,
+    Person to Language
+}
+
+relationship ManyToMany {
+	Person to Skill,
+    Person to Experience
+}
+
+
+
+
+
