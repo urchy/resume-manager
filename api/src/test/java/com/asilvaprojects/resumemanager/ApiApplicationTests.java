@@ -1,4 +1,4 @@
-package com.asilvaprojects.resumemanager.api;
+package com.asilvaprojects.resumemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

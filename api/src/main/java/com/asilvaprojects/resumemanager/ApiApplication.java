@@ -1,4 +1,4 @@
-package com.asilvaprojects.resumemanager.api;
+package com.asilvaprojects.resumemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
