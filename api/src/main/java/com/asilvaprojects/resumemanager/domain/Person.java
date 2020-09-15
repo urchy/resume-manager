@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -30,10 +31,10 @@ public class Person {
     private LocalDate dateOfBirth;
     @NonNull
     private Address address;
-    @DBRef
-    private Set<Education> education;
-    @DBRef
-    private Set<Experience> experience;
-    @DBRef
-    private Set<Skill> skills;
+
+    private List<Education> education;
+
+    private List<Experience> experience;
+
+    private List<Skill> skills;
 }

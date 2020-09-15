@@ -3,7 +3,9 @@ package com.asilvaprojects.resumemanager.bootstrap;
 import com.asilvaprojects.resumemanager.domain.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -14,9 +16,9 @@ public class ResumeBuilder {
 
     private Person person;
     private Address address;
-    private Set<Education> educations = new HashSet<>();
-    private Set<Experience> experiences = new HashSet<>();
-    private Set<Skill> skills = new HashSet<>();
+    private List<Education> educations = new ArrayList<>();
+    private List<Experience> experiences = new ArrayList<>();
+    private List<Skill> skills = new ArrayList<>();
 
     public ResumeBuilder() {
     }

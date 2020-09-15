@@ -34,7 +34,6 @@ class ResumeServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        resumeService.setResumeMapper(ResumeMapper.INSTANCE);
     }
 
     @Test

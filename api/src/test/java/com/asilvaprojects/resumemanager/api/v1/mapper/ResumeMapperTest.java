@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -17,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ResumeMapperTest {
 
-    private ResumeMapper resumeMapper = ResumeMapper.INSTANCE;
+    private final ResumeMapper resumeMapper = ResumeMapper.INSTANCE;
     public static final String NAME = "Joe";
     public static final long ID = 1L;
 
     @Test
-    public void giveResumeObject_returnResumeDTO(){
+    public void giveResumeObject_returnResumeDTO() {
 
         //given
         final Resume resume = createResume();
@@ -33,17 +31,18 @@ public class ResumeMapperTest {
         //then
         assertEquals(resume.getId(), resumeDTO.getId());
         assertEquals(resume.getPerson().getAddress(), resumeDTO.getPerson().getAddress());
-        assertEquals(resume.getPerson().getExperience().stream().count(),1);
-        assertEquals(resume.getPerson().getAddress().getCountry(),"country");
+        assertEquals(resume.getPerson().getExperience().stream().count(), 1);
+        assertEquals(resume.getPerson().getAddress().getCountry(), "country");
+        assertEquals(resume.getPerson().getEducation().get(0).getDegree(), "degree");
     }
 
     private Resume createResume() {
         return new ResumeBuilder()
-                .buildAddress("1","street", "postalCode", "country")
-                .buildEducation("1","degree", "institution", LocalDate.now(), LocalDate.now().plusDays(1L), "grade")
-                .buildExperince("1","role", "description", LocalDate.now().minusYears(1L), LocalDate.now())
-                .buildSkill("1","skillName", 1)
-                .buildPerson("1", "firstname", "lastName", LocalDate.of(1988,06,25))
+                .buildAddress("1", "street", "postalCode", "country")
+                .buildEducation("1", "degree", "institution", LocalDate.now(), LocalDate.now().plusDays(1L), "grade")
+                .buildExperince("1", "role", "description", LocalDate.now().minusYears(1L), LocalDate.now())
+                .buildSkill("1", "skillName", 1)
+                .buildPerson("1", "firstname", "lastName", LocalDate.of(1988, 06, 25))
                 .buildResume("presentation");
     }
 
