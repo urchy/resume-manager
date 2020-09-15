@@ -23,7 +23,9 @@ public class Person {
     @Id
     private Long id;
     @NonNull
-    private String name;
+    private String firstName;
+    @NonNull
+    private String lastName;
     @NonNull
     private LocalDate dateOfBirth;
     @NonNull

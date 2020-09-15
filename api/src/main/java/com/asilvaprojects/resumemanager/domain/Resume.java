@@ -1,27 +1,26 @@
 package com.asilvaprojects.resumemanager.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDate;
 
 /**
  * Created by andre on Sep, 2020
  */
 
 @Data
-@AllArgsConstructor
 @Document
-public class Address {
+public class Resume {
 
     @Id
-    private Long id;
+    private Long Id;
     @NonNull
-    private String street;
+    private LocalDate creationDate;
     @NonNull
-    private String postalCode;
+    private String presentation;
     @NonNull
-    private String Country;
+    private Person person;
 }
-
