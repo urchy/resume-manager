@@ -22,11 +22,14 @@ public class Bootstrap implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        log.info("Clean database.");
         resumeRepository.deleteAll();
+        log.info("Insert bootstrap content.");
         resumeRepository.save(createResume());
     }
 
     private Resume createResume() {
+
         return new ResumeBuilder()
                 .buildAddress("1","Wellington Street", "LS1 4DL", "England")
                 .buildEducation("1","Computer Science", "School of Engineering - Polytechnic of Porto (ISEP)", LocalDate.of(2009,9,1), LocalDate.of(2013,9,1), "13")
