@@ -3,10 +3,7 @@ package com.asilvaprojects.resumemanager.bootstrap;
 import com.asilvaprojects.resumemanager.domain.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by andre on Sep, 2020
@@ -52,6 +49,6 @@ public class ResumeBuilder {
     }
 
     public Resume buildResume(String presentation){
-        return new Resume(LocalDate.now(),presentation, this.person);
+        return new Resume(UUID.randomUUID().toString(),LocalDate.now(),presentation, this.person);
     }
 }

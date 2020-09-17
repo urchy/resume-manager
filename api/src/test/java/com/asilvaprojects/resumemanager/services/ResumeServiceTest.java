@@ -61,5 +61,4 @@ class ResumeServiceTest {
                 .buildResume("presentation");
     }
 
-
 }

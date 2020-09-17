@@ -1,13 +1,12 @@
 package com.asilvaprojects.resumemanager.controllers.v1;
 
+import com.asilvaprojects.resumemanager.api.v1.model.ResumeDTO;
 import com.asilvaprojects.resumemanager.api.v1.model.ResumeListDTO;
 import com.asilvaprojects.resumemanager.services.ResumeService;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by andre on Sep, 2020
@@ -28,4 +27,21 @@ public class ResumeController {
         return new ResumeListDTO(resumeService.retrieveAllResumes());
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResumeDTO createNewResume(@RequestBody ResumeDTO resumeDTO) {
+        return resumeService.createNewResume(resumeDTO);
+    }
+
+    @PutMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
+    public ResumeDTO updateVendor(@PathVariable String id, @RequestBody ResumeDTO resumeDTO){
+        return resumeService.saveResumeByDTO(id, resumeDTO);
+    }
+
+    @DeleteMapping({"/{id}"})
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteVendor(@PathVariable String id){
+        resumeService.deleteResumeById(id);
+    }
 }

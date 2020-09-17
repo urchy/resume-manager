@@ -26,7 +26,7 @@ public class ResumeMapperTest {
         final Resume resume = createResume();
 
         //when
-        final ResumeDTO resumeDTO = resumeMapper.ResumetoResumeDTO(resume);
+        final ResumeDTO resumeDTO = resumeMapper.resumetoResumeDTO(resume);
 
         //then
         assertEquals(resume.getId(), resumeDTO.getId());
